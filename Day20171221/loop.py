@@ -25,6 +25,7 @@ for i in range(1,10):
     else:
         print(i,end=' ')
 
+
 print()
 
 # while循环
