@@ -1,6 +1,9 @@
 # __author : "Flouis"
 # date : 2017/12/27
 
+
+# Python中列表的概念等同于Java/C++的数组
+
 arr = ['abc','def','ghi','jkl','xyz']
 print(arr[0],end=' ' + str(len(arr)))
 print()
@@ -31,11 +34,11 @@ index = arr.index( 'Flouis' )
 print('index of \'Flouis\' is ',end=str(index))
 print()
 
-# 列表删除元素——remove
+# 列表按照内容删除元素——remove，如果有重复内容，只会删除第一个
 arr.remove('xx')
 print(arr)
 
-# 列表删除元素——pop
+# 列表按照索引删除元素——pop，无参数时候默认删除列表最后一个元素
 arr.pop(2)
 print(arr)
 print( 'index of \'Flouis\' is ',end=str( arr.index('Flouis') ) )
