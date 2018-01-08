@@ -23,11 +23,34 @@ resultList = re.findall(r'.世界.',s)
 print(resultList)
 
 s = '直到世界的尽头。你好，明天。'
-pattern = re.compile(r'[\u4e00-\u9fa5]*')
-match = pattern.match(s)
-resultList = match.groups()
-print(match)
+pattern = re.compile('[\u4e00-\u9fa5]*')
+resultList = re.findall(pattern,s)
+print(resultList)
+resultList = pattern.findall(s)
+print(resultList)
 
+
+print(pattern.finditer(s))
+for i in pattern.finditer(s):
+    print(i.group())
+
+
+print(re.finditer(pattern,s))
+for i in re.finditer(pattern,s):
+    print(i.group())
+
+iterator = pattern.finditer(s)
+print(iterator)
+resultList = []
+while True:
+    try:
+        # print(next(iterator).group())
+        temp = next(iterator).group()
+        if temp != '':
+            resultList.append(temp)
+    except StopIteration:
+        break
+print(resultList)
 
 
     
