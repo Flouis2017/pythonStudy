@@ -1,5 +1,6 @@
 # __author : "Flouis"
 # date : 2018/1/15
+import time
 
 
 def action(n):
@@ -8,9 +9,11 @@ def action(n):
 
     # filePath = 'C:/Users/Administrator/Desktop/temp/record.log'
 
-# 做日志记录：
+    # 做日志记录：
+    time_format = '%Y-%m-%d %X' # log_time with date 
     with open('record.log','a+') as file:
-        resStr = ''.join(['end action ',str(n),'\n'])
+        current_time = time.strftime( time_format )
+        resStr = ''.join([current_time,'  ','end action ',str(n),'\n'])
         file.write(resStr)
 
 action(1)
