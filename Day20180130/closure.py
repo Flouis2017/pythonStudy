@@ -16,7 +16,7 @@ def outer():
         return ( y + str(x) )
     return inner()  # -->注意，这里是返回一个值，不是一个方法名/对象，所以这里虽然在inner方法中调用到了enclosing变量x，但不是闭包
 
-print( outer() )    # -->OOXX
+print( outer() )    # -->OOXX100
 
 # 闭包结构：
 
@@ -24,7 +24,7 @@ def outer2():
     x = 0
     def inner2():
         y = 1
-        print(x+y)
+        print( str(x) + str(y) )
     return inner2   # -->这里返回内部方法对象，即将方法当成一个变量来进行返回，而且在该内部方法中还
                     # -->调用到了enclosing变量，所以outer2-inner2构成了一个闭包结构。
 
