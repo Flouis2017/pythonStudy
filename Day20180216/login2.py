@@ -1,18 +1,11 @@
 # __author : "Flouis"
 # date : 2018/2/17
 import sys
+import time
 
-# Login decorator:
+login_status = [False]
 
-#global login_status
-login_status = False
-
-def changeLoginStatus():
-    print(login_status)
-    login_status = 2
-
-changeLoginStatus()
-print(login_status)
+tmpList = [False,0]
 
 def toggleStatus(login_status):
     if login_status == True:
@@ -21,34 +14,38 @@ def toggleStatus(login_status):
         login_status = True
     return login_status
 
-#login_status = toggleStatus(login_status)
-#print(login_status)
-
+# Login decorator:
 def login(f):
-#    print(login_status)
     def inner():
-        if login_status == True:
+        if tmpList[0] == True:
             f()
         else:
-            username = input('UserName:')
-            password = input('Password:')
-            if username == 'admin' and password == 'admin123':
-                f()
-#                login_status = True
-                toggleStatus()
-            else:
-                print('Username or password occurs error,please try again!')
+            while True:
+                if tmpList[1] == 3:
+                    print('Error occurred triple times,please try again later!')
+                    time.sleep(5)
+                    tmpList[1] = 0
+                    continue
+                username = input('UserName:')
+                password = input('Password:')
+                if username == 'admin' and password == 'admin123':
+                    f()
+                    tmpList[0] = True
+                    break
+                else:
+                    print('Username or password occurs error,please try again!')
+                    tmpList[1] += 1
     return inner
 
 @login
 def home():
     print('Welcome to Home Page!')
-    
-#@login
+
+@login
 def clothes():
     print('Welcome to Clothes Page!')
     
-#@login
+@login
 def book():
     print('Welcome to Book Page!')
 
@@ -69,4 +66,4 @@ def start():
         else:
             print('No relative result!')
 
-#start()
+start()
