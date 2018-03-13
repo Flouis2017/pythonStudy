@@ -15,7 +15,7 @@ import time
 
 # print(time.localtime())   # 本地时间                              *****
 
-# print(help(time.strftime))  # strftime(format[, tuple]) -> string
+# print(help(time.strftime))  # strftime(format, tuple) -> string
 # 格式化时间：2018-03-12 22:53:52
 # print(time.strftime('%Y-%m-%d %H:%M:%S',time.localtime()))       ******
 
