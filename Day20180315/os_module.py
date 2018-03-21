@@ -34,7 +34,14 @@ os.chdir(r'C:\Users\Administrator\Desktop\temporary\Flouis')
 # os.remove(r'C:\Users\Administrator\Desktop\temporary\Flouis\test.txt')
 
 # 创建一个文件————注意不是文件夹（目录）
-# f = open('test.txt','a') # 使用'w'的模式创建，如果名字一样，会清空之前文件中的内容。
+f = open('test.txt','a') # 使用'w'的模式创建，如果名字一样，会清空之前文件中的内容。
+# f.write('\n尽诸宵小天策义，长枪独守大唐魂。')
+f = open('test.txt')
+lines = f.readlines()
+for x in lines:
+    x = x.strip('\n')
+    print(x)
+f.close()
 
 # 重命名文件名
 # os.rename('test2.txt','test3.txt')
@@ -84,7 +91,7 @@ print('该TXT文件的修改时间为：',last_modified_time)'''
 # print(os.path.isdir(r'C:\Users\Administrator\Desktop\temporary\Flouis\test.txt'))
 
 # 返回路径所指向的文件或目录的最后存取时间——时间戳：
-print(os.path.getatime(r'C:\Users\Administrator\Desktop\temporary\Flouis'))
+# print(os.path.getatime(r'C:\Users\Administrator\Desktop\temporary\Flouis'))
 
 # 返回路径所指向的文件或目录的最后修改时间——时间戳：
-print(os.path.getmtime(r'C:\Users\Administrator\Desktop\temporary\Flouis'))
+# print(os.path.getmtime(r'C:\Users\Administrator\Desktop\temporary\Flouis'))
