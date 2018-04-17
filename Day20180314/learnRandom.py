@@ -4,7 +4,7 @@
 import random
 # Very attention: we can not create a python file named 'random',because that would lead to
 # clash with the random module built in.
-from collections import Iterator,Iterable
+# from collections import Iterator,Iterable
 
 
 # generate decimal from 0 to 1
@@ -27,7 +27,7 @@ print(l)
 # return a random list with specified length
 print(random.sample('world',2))  # ['r', 'd']
 
-# return a ramdom integer from section of [int1,int2)
+# return a random integer from section of [int1,int2)
 print(random.randrange(1,3))
 
 print('===============================================================')
