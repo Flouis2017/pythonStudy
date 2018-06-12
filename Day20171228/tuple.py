@@ -14,3 +14,7 @@ print(type(myTuple))
 myTuple=(1,)
 print(type(myTuple))
 
+# 元组可以存放数组：
+t = ([1,1,1],[1,2,3])
+print(t[0])
+

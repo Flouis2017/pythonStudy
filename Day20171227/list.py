@@ -2,7 +2,7 @@
 # date : 2017/12/27
 
 
-# Python中列表的概念等同于Java/C++的数组
+# Python中列表的概念类似于Java/C++的数组
 
 arr = ['abc','def','ghi','jkl','xyz']
 print(arr[0],end=' ' + str(len(arr)))
@@ -66,5 +66,12 @@ arr=[2,1,5,9,0]
 arr.sort(reverse=True)
 print(arr)
 
-
 print (type(arr) is list)
+
+# Python中的数组不同于Java的地方是：Python中的数组可以直接存放数组，而Java只能通过多维数组
+t = [[1,1,1],[2]]
+for x in t:
+    print(x)
+
+
+
