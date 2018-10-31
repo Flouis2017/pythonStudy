@@ -19,3 +19,6 @@ reg = 'b.{2}k'
 print(re.findall(reg,tmp_str))
 
 
+from my_module import my_lib
+my_lib.print_multiplication_table()
+
