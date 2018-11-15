@@ -2,9 +2,10 @@
 import re
 # =======================================================================
 pat = "ais"
-string = "You raise me ais up"
+string = "You raise me ais up ais"
 
 # search(re, str)：搜索匹配str中re首次出现的下标元组
+# rst = re.search(pat, string).span()[0]
 rst = re.search(pat, string)
 print(rst) # <_sre.SRE_Match object; span=(5, 8), match='ais'>
 
@@ -39,7 +40,7 @@ print(rst) # <_sre.SRE_Match object; span=(4, 7), match='ace'>
 # 元字符(正则表达式中具有特殊含义的字符，如果要匹配本身需进行转义)：\ . ^ $ * ? + {}
 '''
 \: 转义字符
-.: 匹配任意一个字符
+.: 匹配任意一个字符（除了换行符）
 ^: 匹配字符串开始的位置
 $: 匹配字符串结束的位置
 *: 匹配之前字符出现任意次
